@@ -1,19 +1,15 @@
 const telegrambot = require('node-telegram-bot-api');
+require('dotenv').config();
 const http = require('http');
 const request = require('request');
-const token = process.env.token;
+const token = process.env.Token;
 const options = {
     webHook: {
-      // Port to which you should bind is assigned to $PORT variable
-      // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
       port: process.env.PORT
-      // you do NOT need to set up certificates since Heroku provides
-      // the SSL certs already (https://<app-name>.herokuapp.com)
-      // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
     }
   };
 const url = process.env.APP_URL || 'https://goldyyweatherbot.herokuapp.com:443';
-const bot = new TelegramBot(token, options);
+const bot = new telegrambot(token, options);
 
 
 bot.onText(/\/start/, (msg) => {
