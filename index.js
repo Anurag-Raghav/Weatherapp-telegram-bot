@@ -22,7 +22,7 @@ bot.onText(/\/start/, (msg) => {
         
     });
 
-
+    bot.setWebHook(`${url}/bot${token}`);
 
 bot.on('message', msg => {
     if (msg.text === '/start') {
