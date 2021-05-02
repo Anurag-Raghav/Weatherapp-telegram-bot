@@ -40,7 +40,8 @@ bot.on('message', msg => {
             const temperature = res.main.temp;
             const max=res.main.temp_max;
             const min=res.main.temp_min;
-            bot.sendMessage(chatID, `current_temp:-${temperature}°C\nmax_temp:-${max}°C\nmin_temp:-${min}°C`);
+            const description=main.weather[0].main;
+            bot.sendMessage(chatID, `current_temp:-${temperature}°C\nmax_temp:-${max}°C\nmin_temp:-${min}°C\ndescription:-${description}`);
             
         } else {
             console.log(error);
