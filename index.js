@@ -38,7 +38,9 @@ bot.on('message', msg => {
             }
 
             const temperature = res.main.temp;
-            bot.sendMessage(chatID, `${temperature}°C`);
+            const max=res.main.temp_max;
+            bot.sendMessage(chatID, `${temperature}°C\n ${max}°C`);
+            
         } else {
             console.log(error);
         }
