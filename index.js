@@ -27,7 +27,7 @@ bot.on('message', msg => {
     const chatID = msg.chat.id;
     const cityName = msg.text;
 
-    request(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=d301f96211ce70232728c51c966a6cf0`, function (error, response, body) {
+    request(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.APP_ID}`, function (error, response, body) {
         if (!error) {
             const res = JSON.parse(body);
             
